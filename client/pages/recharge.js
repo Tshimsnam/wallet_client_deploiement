@@ -14,7 +14,7 @@ export default function Recharge() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/wallet/recharge', {
+      const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/wallet/recharge', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ export default function TransferPlan() {
 
     // Charger les forfaits disponibles
     useEffect(() => {
-        axios.get('http://localhost:8000/api/plans', {
+        axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/plans', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
@@ -44,7 +44,7 @@ export default function TransferPlan() {
 
         try {
             const response = await axios.post(
-                'http://localhost:8000/api/wallet/transferPlan',
+                '${process.env.NEXT_PUBLIC_API_URL}/api/wallet/transferPlan',
                 {
                     receiver_phone: receiverPhone,
                     plan_id: selectedPlan.id,

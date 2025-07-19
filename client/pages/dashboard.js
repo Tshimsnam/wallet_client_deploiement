@@ -21,7 +21,7 @@ export default function Dashboard() {
         }
 
         // Fetch user data
-        axios.get('http://localhost:8000/api/user', {
+        axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/user', {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(res => {
@@ -35,7 +35,7 @@ export default function Dashboard() {
             });
 
         // Fetch transactions
-        axios.get('http://localhost:8000/api/transactions', {
+        axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/transactions', {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(res => {
