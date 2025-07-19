@@ -52,7 +52,7 @@ export default function Register() {
     
     setIsSubmitting(true);
     try {
-      await axios.post('${process.env.NEXT_PUBLIC_API_URL}/api/register', form);
+      await axios.post('http://localhost:8000/api/register', form);
       router.push({
         pathname: '/login',
         query: { registered: 'true' }

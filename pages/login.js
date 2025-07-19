@@ -53,7 +53,7 @@ export default function Login() {
         setIsSubmitting(true);
         setError('');
         try {
-            const res = await axios.post('${process.env.NEXT_PUBLIC_API_URL}/api/login', form);
+            const res = await axios.post('http://localhost:8000/api/login', form);
 
             // Stocker le token dans le localStorage
             localStorage.setItem('token', res.data.token);

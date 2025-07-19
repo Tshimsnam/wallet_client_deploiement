@@ -13,7 +13,7 @@ const PurchasePage = () => {
   useEffect(() => {
     const fetchPlans = async () => {
       try {
-        const response = await axios.get('${process.env.NEXT_PUBLIC_API_URL}/api/plans', {
+        const response = await axios.get('http://localhost:8000/api/plans', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -33,7 +33,7 @@ const PurchasePage = () => {
   const handlePurchase = async (planId) => {
     setPurchasing(planId);
     try {
-      await axios.post('${process.env.NEXT_PUBLIC_API_URL}/api/wallet/purchase', {
+      await axios.post('http://localhost:8000/api/wallet/purchase', {
         plan_id: planId,
       }, {
         headers: {
